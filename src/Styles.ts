@@ -21,7 +21,7 @@ export const imgContainer = css`
     width: 500px;
     img {
         width: 200px;
-        height: auto;
+        height: 200px;
         border-radius: 100px;
     }
 `
