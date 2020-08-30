@@ -1,11 +1,11 @@
+// eslint-disable-next-line
 import React, { useState, useEffect } from 'react'
 import { postContainer, postTitle, postContent, postFooter, gapMaker } from '../Styles'
 import { Posts, PostObject } from '../Types'
 import firebase from '../firebase'
 /** @jsx jsx */
+// eslint-disable-next-line
 import { css, jsx } from '@emotion/core'
-
-const dateToDB = Date.now()
 const usePosts = () => {
     const [posts, setPosts] = useState([] as Posts)
 

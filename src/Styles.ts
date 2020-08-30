@@ -51,7 +51,7 @@ export const postContainer = css`
     padding: 20px;
     display: grid;
     grid-gap: 1em;
-    width: 50vw;
+    width: 70vw;
     border-radius: 20px;
     background: #303030;
     display: grid;
