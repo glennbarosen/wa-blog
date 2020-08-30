@@ -61,6 +61,7 @@ export const postContainer = css`
 export const gapMaker = css`
     display: grid;
     grid-gap: 2em;
+    margin-bottom: 30px;
 `
 
 export const postTitle = css`

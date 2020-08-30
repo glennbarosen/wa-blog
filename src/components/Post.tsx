@@ -6,6 +6,7 @@ import firebase from '../firebase'
 /** @jsx jsx */
 // eslint-disable-next-line
 import { css, jsx } from '@emotion/core'
+
 const usePosts = () => {
     const [posts, setPosts] = useState([] as Posts)
 
