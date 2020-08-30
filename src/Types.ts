@@ -1,8 +1,10 @@
-export type Post = {
+export type PostObject = {
     id: string,
     title?: string,
+    content?: string,
     date?: Date | any,
-    content?: string
+    hours?: number
+
 }
 
-export type Posts = Array<Post>
+export type Posts = Array<PostObject>
