@@ -1,2 +1,2 @@
 # Homepage
-Currently used as blog for my intership
+Currently used as blog for my internship
