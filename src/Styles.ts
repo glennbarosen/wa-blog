@@ -1,24 +1,64 @@
 import { css } from '@emotion/core'
 
-export const appContainer = css`
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    height: 100vh;
-    grid-gap: 1em;
+export const navbarContainer = css`
+    display: flex;
+    justify-content: flex-end;
+    width: 100vw;
+`
+
+export const authButtonStyle = css`
+    color: #20bf6b !important;
+    text-transform: uppercase;
+    background: #ffffff;
+    margin: 20px;
+    padding: 10px;
+    border: 4px solid #20bf6b !important;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+
+    :hover {
+        color: #494949 !important;
+        border-radius: 50px;
+        border-color: #494949 !important;
+        transition: all 0.3s ease 0s;
+    }
+`
+
+export const newPostButtonStyle = css`
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    margin: 20px;
+    padding: 10px;
+    border: 4px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+
+    :hover {
+        color: #ffffff !important;
+        background: #f6b93b;
+        border-color: #f6b93b !important;
+        transition: all 0.4s ease 0s;
+    }
 `
 
 export const headerContainer = css`
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    height: 80vh;
+    height: 60vh;
+    place-items: center;
+`
+
+export const buttonContainer = css`
+    display: grid;
     place-items: center;
 `
 
 export const imgContainer = css`
-    align-self: end;
     display: flex;
-    justify-content: space-between;
-    width: 500px;
+    width: 40vw;
+    justify-content: space-around;
     img {
         width: 200px;
         height: 200px;
@@ -27,14 +67,15 @@ export const imgContainer = css`
 `
 
 export const headerText = css`
-    width: 500px;
+    width: 40vw;
     color: #DDDDDD;
+    margin-bottom: 30px;
     h1 {
-        font-family: 'Space Mono';
+        font-family: 'Space Mono', monospace;
         font-size: 3em;
     }
     h3 {
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         font-size: 1.5em;
         font-weight: lighter;
     }

@@ -6,7 +6,11 @@ import { headerContainer, imgContainer, headerText } from '../Styles'
 // eslint-disable-next-line
 import { css, jsx } from '@emotion/core'
 
+
+
+
 const Header = () => {
+
     return (
         <div css={headerContainer}>
             <div css={imgContainer}>
