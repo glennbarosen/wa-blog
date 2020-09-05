@@ -21,7 +21,7 @@ export const adminContainer = css`
 `
 
 export const buttonStyle = css`
-    width: 70px;
+    width: 80px;
     text-align: center;
     color: #20bf6b !important;
     text-transform: uppercase;
