@@ -12,12 +12,48 @@ export const adminContainer = css`
     display: grid;
     place-items: center;
 
+    input {
+        border: solid #767676 1px;
+        background: #333;
+        color: #DDDDDD;
+        margin-bottom: 20px;
+    }
     textarea {
+        font-family: 'Montserrat';
+        font-size: 1em;
+        background: #333;
+        color: #DDDDDD;
+        border: solid #767676 1px;
+        margin-bottom: 20px;
         width: 65vw;
         height: 200px;
         resize: none;
     }
+    input:focus, textarea:focus{
+        outline: none;
+    }
+    
+    button {
+        color: #fff !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        background: #60a3bc;
+        padding: 15px;
+        width: 100px;
+        text-align: center;
+        border-radius: 50px;
+        display: inline-block;
+        border: none;
+        transition: all 0.4s ease 0s;
 
+        :hover {
+            text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+            box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+            -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+            -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+            transition: all 0.4s ease 0s;
+        }
+    }
 `
 
 export const buttonStyle = css`
@@ -91,14 +127,14 @@ export const postContainer = css`
     grid-gap: 1em;
     width: 70vw;
     border-radius: 20px;
-    background: #303030;
+    background: #333;
     display: grid;
     grid-template-rows: 1fr auto 1fr;
 `
 
 export const gapMaker = css`
     display: grid;
-    grid-gap: 2em;
+    grid-gap: 30px;
     margin-bottom: 30px;
 `
 
@@ -120,4 +156,8 @@ export const postFooter = css`
     justify-content: space-between;
     font-family: 'Montserrat';
     font-size: 1em;
+`
+
+export const timerDiv = css`
+    margin-top: 50px;
 `

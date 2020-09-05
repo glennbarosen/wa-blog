@@ -11,6 +11,7 @@ const dateToDB = Date.now()
 
 const Admin = () => {
 
+
     const [newPost, setNewPost] = useState({
         title: '',
         hours: '',
@@ -39,10 +40,11 @@ const Admin = () => {
             content: ''
         });
     }
+
     return (
         <div css={adminContainer}>
             <form onSubmit={handleSubmit}>
-                <label>Title: </label><br />
+                <label>Tittel: </label><br />
                 <input
                     name='title'
                     type='text'
@@ -51,7 +53,7 @@ const Admin = () => {
                     onChange={handleChange} />
                 <br />
 
-                <label>Hours: </label><br />
+                <label>Timer: </label><br />
                 <input
                     name='hours'
                     type='text'
@@ -60,10 +62,9 @@ const Admin = () => {
                     onChange={handleChange} />
                 <br />
 
-                <label>Content: </label><br />
+                <label>Innhold: </label><br />
                 <textarea
                     name='content'
-
                     value={newPost.content}
                     autoComplete='off'
                     onChange={handleChange} />

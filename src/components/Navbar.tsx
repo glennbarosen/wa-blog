@@ -48,7 +48,7 @@ const Navbar = (props: INavbarProps) => {
     } else if (location.pathname === '/Admin') {
         return (
             <div css={navbarContainer}>
-                <div css={buttonStyle} onClick={() => { history.push('/') }}>home</div>
+                <div css={buttonStyle} onClick={() => { history.push('/') }}>hjem</div>
                 <div css={buttonStyle} onClick={handleClick}>logg ut</div>
             </div>
         )
