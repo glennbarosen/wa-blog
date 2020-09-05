@@ -1,6 +1,6 @@
 // eslint-disable-next-line
 import React, { useState, useEffect } from 'react'
-import { navbarContainer, authButtonStyle, newPostButtonStyle } from '../Styles'
+import { navbarContainer, buttonStyle } from '../Styles'
 
 
 /** @jsx jsx */
@@ -38,17 +38,24 @@ const Navbar = (props: INavbarProps) => {
             <div css={navbarContainer}>
             </div>
         )
-    } else if (props.getEmail() === 'glennbarosen@gmail.com') {
+    } else if (props.getEmail() === 'glennbarosen@gmail.com' && location.pathname !== '/Admin') {
         return (
             <div css={navbarContainer}>
-                <div css={newPostButtonStyle} onClick={() => { history.push('/createPost') }}>ny post</div>
-                <div css={authButtonStyle} onClick={handleClick}>logg ut</div>
+                <div css={buttonStyle} onClick={() => { history.push('/Admin') }}>admin</div>
+                <div css={buttonStyle} onClick={handleClick}>logg ut</div>
+            </div>
+        )
+    } else if (location.pathname === '/Admin') {
+        return (
+            <div css={navbarContainer}>
+                <div css={buttonStyle} onClick={() => { history.push('/') }}>home</div>
+                <div css={buttonStyle} onClick={handleClick}>logg ut</div>
             </div>
         )
     } else {
         return (
             <div css={navbarContainer}>
-                <div css={authButtonStyle} onClick={handleClick}>{buttonText}</div>
+                <div css={buttonStyle} onClick={handleClick}>{buttonText}</div>
             </div>
 
         )

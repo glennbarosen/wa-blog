@@ -6,6 +6,7 @@ import Home from './views/Home';
 import { css, jsx } from '@emotion/core'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import SignIn from './views/Auth'
+import Admin from './views/Admin'
 import Navbar from './components/Navbar'
 import firebase from './firebase'
 
@@ -46,6 +47,9 @@ const App = () => {
           </Route>
           <Route path='/Auth'>
             <SignIn user={user} />
+          </Route>
+          <Route path='/Admin'>
+            <Admin />
           </Route>
         </Switch>
       </Router>

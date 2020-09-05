@@ -6,7 +6,23 @@ export const navbarContainer = css`
     width: 100vw;
 `
 
-export const authButtonStyle = css`
+export const adminContainer = css`
+    font-family: 'Montserrat';
+    color: #DDDDDD;
+    display: grid;
+    place-items: center;
+
+    textarea {
+        width: 65vw;
+        height: 200px;
+        resize: none;
+    }
+
+`
+
+export const buttonStyle = css`
+    width: 70px;
+    text-align: center;
     color: #20bf6b !important;
     text-transform: uppercase;
     background: #ffffff;
@@ -22,25 +38,6 @@ export const authButtonStyle = css`
         border-radius: 50px;
         border-color: #494949 !important;
         transition: all 0.3s ease 0s;
-    }
-`
-
-export const newPostButtonStyle = css`
-    color: #494949 !important;
-    text-transform: uppercase;
-    text-decoration: none;
-    background: #ffffff;
-    margin: 20px;
-    padding: 10px;
-    border: 4px solid #494949 !important;
-    display: inline-block;
-    transition: all 0.4s ease 0s;
-
-    :hover {
-        color: #ffffff !important;
-        background: #f6b93b;
-        border-color: #f6b93b !important;
-        transition: all 0.4s ease 0s;
     }
 `
 
@@ -116,6 +113,7 @@ export const postContent = css`
     font-family: 'Montserrat';
     font-size: 1em;
     font-weight: lighter;
+    white-space: pre-line;
 `
 export const postFooter = css`
     display: flex;
