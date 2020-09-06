@@ -1,6 +1,6 @@
 // eslint-disable-next-line
 import React, { useState } from 'react'
-import { adminContainer } from '../Styles'
+import { adminContainer, buttonStyle } from '../Styles'
 import firebase from '../firebase'
 
 /** @jsx jsx */
@@ -70,7 +70,7 @@ const Admin = () => {
                     onChange={handleChange} />
                 <br />
 
-                <button>POST</button>
+                <button css={buttonStyle}>post</button>
             </form>
         </div>
     )
