@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { adminContainer, buttonStyle } from '../Styles'
 import firebase from '../firebase'
 
@@ -7,9 +7,17 @@ import firebase from '../firebase'
 // eslint-disable-next-line
 import { css, jsx } from '@emotion/core'
 
+interface IAdminProps {
+    handleButtonText: () => void
+}
+
 const dateToDB = Date.now()
 
-const Admin = () => {
+const Admin = (props: IAdminProps) => {
+
+    useEffect(() => {
+        props.handleButtonText()
+    }, [props])
 
 
     const [newPost, setNewPost] = useState({

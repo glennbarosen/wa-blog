@@ -1,6 +1,6 @@
 // eslint-disable-next-line
-import React, { useState } from 'react'
-import { navbarContainer, buttonStyle } from '../Styles'
+import React, { useState, useEffect } from 'react'
+import { navbarContainer, buttonStyle, navbarLogo, navLinks } from '../Styles'
 
 
 /** @jsx jsx */
@@ -9,7 +9,8 @@ import { css, jsx } from '@emotion/core'
 import { useHistory, useLocation } from 'react-router-dom'
 
 interface INavbarProps {
-    user: string
+    user: any
+    buttonText: string
     signOutUser: () => void
     getEmail: () => string
 }
@@ -17,45 +18,56 @@ interface INavbarProps {
 
 const Navbar = (props: INavbarProps) => {
 
-
-    const [buttonText, setButtonText] = useState('logg inn')
     const history = useHistory()
     const location = useLocation()
 
-    const handleClick = () => {
+
+
+
+
+    const handleSignInClick = () => {
         if (props.user === null) {
             history.push('/Auth')
-            setButtonText('logg ut')
 
         } else {
             props.signOutUser()
-            setButtonText('logg inn')
         }
     }
 
     if (location.pathname === '/Auth') {
         return (
+
             <div css={navbarContainer}>
+
+                <div css={navbarLogo} onClick={() => history.push('/')}>GLENNBAROSEN</div>
             </div>
         )
     } else if (props.getEmail() === 'glennbarosen@gmail.com' && location.pathname !== '/Admin') {
         return (
             <div css={navbarContainer}>
-                <div css={buttonStyle} onClick={() => { history.push('/Admin') }}>admin</div>
-                <div css={buttonStyle} onClick={handleClick}>logg ut</div>
+                <div css={navbarLogo} onClick={() => history.push('/')}>GLENNBAROSEN</div>
+                <div css={navLinks}>
+                    <div css={buttonStyle} onClick={() => { history.push('/Admin') }}>admin</div>
+                    <div css={buttonStyle} onClick={handleSignInClick}>{props.buttonText}</div>
+                </div>
             </div>
         )
     } else if (location.pathname === '/Admin') {
         return (
             <div css={navbarContainer}>
-                <div css={buttonStyle} onClick={() => { history.push('/') }}>hjem</div>
-                <div css={buttonStyle} onClick={handleClick}>logg ut</div>
+                <div css={navbarLogo} onClick={() => history.push('/')}>GLENNBAROSEN</div>
+                <div css={navLinks}>
+                    <div css={buttonStyle} onClick={handleSignInClick}>{props.buttonText}</div>
+                </div>
             </div>
         )
     } else {
         return (
             <div css={navbarContainer}>
-                <div css={buttonStyle} onClick={handleClick}>{buttonText}</div>
+                <div css={navbarLogo} onClick={() => history.push('/')}>GLENNBAROSEN</div>
+                <div css={navLinks}>
+                    <div css={buttonStyle} onClick={handleSignInClick}>{props.buttonText}</div>
+                </div>
             </div>
 
         )

@@ -13,6 +13,8 @@ import firebase from './firebase'
 const App = () => {
 
   const [user, setUser] = useState(null)
+  const [buttonText, setButtonText] = useState('logg inn')
+
   useEffect(() => {
     const authMonitor = firebase
       .auth()
@@ -22,6 +24,14 @@ const App = () => {
     return authMonitor
 
   }, [])
+
+  const handleButtonText = () => {
+    if (user !== null) {
+      setButtonText('logg ut')
+    } else {
+      setButtonText('logg inn')
+    }
+  }
 
   const signOutUser = () => {
     firebase.auth().signOut().then(() => {
@@ -39,17 +49,17 @@ const App = () => {
   return (
     <Fragment>
       <Router>
-        <Navbar user={user} signOutUser={signOutUser} getEmail={getEmail} />
+        <Navbar buttonText={buttonText} user={user} signOutUser={signOutUser} getEmail={getEmail} />
 
         <Switch>
           <Route exact path='/'>
-            <Home />
+            <Home handleButtonText={handleButtonText} />
           </Route>
           <Route path='/Auth'>
             <SignIn user={user} />
           </Route>
           <Route path='/Admin'>
-            <Admin />
+            <Admin handleButtonText={handleButtonText} />
           </Route>
         </Switch>
       </Router>
