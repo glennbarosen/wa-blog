@@ -3,8 +3,31 @@ import { css } from '@emotion/core'
 // NAVBAR
 export const navbarContainer = css`
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
     width: 100vw;
+`
+
+export const navbarLogo = css`
+    color: #dddddd;
+    font-family: 'Raleway';
+    font-size: 35px;
+    font-weight: 200;
+    letter-spacing: 5px;
+    display: flex;
+    width: 50vw;
+    justify-content: flex-start;
+    margin: 8px 0 8px 16px;
+
+    :hover {
+        cursor: pointer;
+    }
+`
+
+export const navLinks = css`
+    display: flex;
+    justify-content: flex-end;
+    width: 50vw;
+    margin: 8px 16px 8px 0;
 `
 
 export const buttonStyle = css`
@@ -14,7 +37,7 @@ export const buttonStyle = css`
     background: #ff6565;
     margin: 10px;
     padding: 10px;
-    width: 100px;
+    width: 120px;
     text-align: center;
     border-radius: 50px;
     display: inline-block;
