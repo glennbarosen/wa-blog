@@ -18,8 +18,7 @@ const Header = () => {
                 <img src={require('../assets/wa-logo.png')} alt='walogo' />
             </div>
             <div css={headerText}>
-                <h1>Glenn Barosen</h1>
-                <h3>En blogg om praksisperioden hos WA.works</h3>
+                En blogg om praksisperioden hos WA.works
             </div>
         </div>
     )

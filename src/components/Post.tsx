@@ -34,7 +34,7 @@ const Post = () => {
                 posts.map((post: PostObject) => (
                     <div key={post.id} css={postContainer}>
                         <div css={postTitle}>
-                            <h1>{post.title}</h1>
+                            {post.title}
                         </div>
                         <div css={postContent}>
                             {post.content}

@@ -4,18 +4,18 @@ import { css } from '@emotion/core'
 export const navbarContainer = css`
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     width: 100vw;
 `
 
 export const navbarLogo = css`
     color: #dddddd;
     font-family: 'Raleway';
-    font-size: 35px;
+    font-size: 2em;
     font-weight: 200;
     letter-spacing: 5px;
     display: flex;
-    width: 50vw;
-    justify-content: flex-start;
     margin: 8px 0 8px 16px;
 
     :hover {
@@ -23,12 +23,22 @@ export const navbarLogo = css`
     }
 `
 
+
 export const navLinks = css`
     display: flex;
-    justify-content: flex-end;
-    width: 50vw;
     margin: 8px 16px 8px 0;
+    
+    ul{
+        display: flex;
+        flex-direction: row;
+    }
+
+    li{
+        list-style: none;
+    }
 `
+
+
 
 export const buttonStyle = css`
     color: #fff !important;
@@ -63,8 +73,8 @@ export const headerContainer = css`
 
 export const imgContainer = css`
     display: flex;
-    width: 40vw;
-    justify-content: space-around;
+    width: 30vw;
+    justify-content: space-between;
     img {
         width: 200px;
         height: 200px;
@@ -73,18 +83,15 @@ export const imgContainer = css`
 `
 
 export const headerText = css`
-    width: 40vw;
+    display: grid;
+    place-items: center;
+    width: 30vw;
     color: #DDDDDD;
     margin-bottom: 30px;
-    h1 {
-        font-family: 'Space Mono', monospace;
-        font-size: 3em;
-    }
-    h3 {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 1.5em;
-        font-weight: lighter;
-    }
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    font-size: 2em;
+
 `
 
 // FEED
@@ -117,15 +124,18 @@ export const gapMaker = css`
 export const postTitle = css`
     display: grid;
     place-items: center;
-    font-family: 'Space Mono';
-    font-size: 1em;
+    font-family: 'Ubuntu';
+    font-weight: 700;
+    font-size: 3em;
+    
 `
 
 export const postContent = css`
     font-family: 'Montserrat';
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: 300;
     white-space: pre-line;
+    line-height: 1.5;
 `
 export const postFooter = css`
     display: flex;

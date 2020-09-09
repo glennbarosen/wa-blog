@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { navbarContainer, buttonStyle, navbarLogo, navLinks } from '../Styles'
 
 
@@ -20,10 +20,6 @@ const Navbar = (props: INavbarProps) => {
 
     const history = useHistory()
     const location = useLocation()
-
-
-
-
 
     const handleSignInClick = () => {
         if (props.user === null) {
@@ -47,8 +43,11 @@ const Navbar = (props: INavbarProps) => {
             <div css={navbarContainer}>
                 <div css={navbarLogo} onClick={() => history.push('/')}>GLENNBAROSEN</div>
                 <div css={navLinks}>
-                    <div css={buttonStyle} onClick={() => { history.push('/Admin') }}>admin</div>
-                    <div css={buttonStyle} onClick={handleSignInClick}>{props.buttonText}</div>
+                    <ul>
+                        <li><div css={buttonStyle} onClick={() => { history.push('/Admin') }}>admin</div></li>
+                        <li><div css={buttonStyle} onClick={handleSignInClick}>{props.buttonText}</div></li>
+                    </ul>
+
                 </div>
             </div>
         )
