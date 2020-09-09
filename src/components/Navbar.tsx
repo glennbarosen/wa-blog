@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-import React from 'react'
+import React, { Fragment } from 'react'
 import { navbarContainer, buttonStyle, navbarLogo, navLinks } from '../Styles'
 
 
@@ -27,49 +27,34 @@ const Navbar = (props: INavbarProps) => {
 
         } else {
             props.signOutUser()
+            history.push('/')
         }
     }
 
-    if (location.pathname === '/Auth') {
-        return (
-
-            <div css={navbarContainer}>
-
-                <div css={navbarLogo} onClick={() => history.push('/')}>GLENNBAROSEN</div>
+    return (
+        <div css={navbarContainer}>
+            <div css={navbarLogo} onClick={() => history.push('/')}>
+                GLENNBAROSEN
             </div>
-        )
-    } else if (props.getEmail() === 'glennbarosen@gmail.com' && location.pathname !== '/Admin') {
-        return (
-            <div css={navbarContainer}>
-                <div css={navbarLogo} onClick={() => history.push('/')}>GLENNBAROSEN</div>
-                <div css={navLinks}>
-                    <ul>
-                        <li><div css={buttonStyle} onClick={() => { history.push('/Admin') }}>admin</div></li>
-                        <li><div css={buttonStyle} onClick={handleSignInClick}>{props.buttonText}</div></li>
-                    </ul>
+            <div css={navLinks}>
+                {
+                    (props.getEmail() === 'glennbarosen@gmail.com' && location.pathname === '/')
+                        ? <Fragment>
+                            <div css={buttonStyle} onClick={() => { history.push('/Admin') }}>
+                                admin
+                                </div>
+                            <div css={buttonStyle} onClick={handleSignInClick}>{props.buttonText}</div>
+                        </Fragment>
 
-                </div>
-            </div>
-        )
-    } else if (location.pathname === '/Admin') {
-        return (
-            <div css={navbarContainer}>
-                <div css={navbarLogo} onClick={() => history.push('/')}>GLENNBAROSEN</div>
-                <div css={navLinks}>
-                    <div css={buttonStyle} onClick={handleSignInClick}>{props.buttonText}</div>
-                </div>
-            </div>
-        )
-    } else {
-        return (
-            <div css={navbarContainer}>
-                <div css={navbarLogo} onClick={() => history.push('/')}>GLENNBAROSEN</div>
-                <div css={navLinks}>
-                    <div css={buttonStyle} onClick={handleSignInClick}>{props.buttonText}</div>
-                </div>
-            </div>
+                        : (location.pathname !== '/Auth')
+                            ? < Fragment >
+                                <div css={buttonStyle} onClick={handleSignInClick}>{props.buttonText}</div>
+                            </Fragment>
 
-        )
-    }
+                            : <Fragment></Fragment>
+                }
+            </div>
+        </div>
+    )
 }
 export default Navbar
