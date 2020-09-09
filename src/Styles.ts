@@ -73,7 +73,7 @@ export const headerContainer = css`
 
 export const imgContainer = css`
     display: flex;
-    width: 30vw;
+    width: 40vw;
     justify-content: space-between;
     img {
         width: 200px;
@@ -83,9 +83,8 @@ export const imgContainer = css`
 `
 
 export const headerText = css`
-    display: grid;
-    place-items: center;
-    width: 30vw;
+    text-align: center;
+    width: 40vw;
     color: #DDDDDD;
     margin-bottom: 30px;
     font-family: 'Ubuntu';
