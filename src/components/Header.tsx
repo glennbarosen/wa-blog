@@ -14,7 +14,7 @@ const Header = () => {
     return (
         <div css={headerContainer}>
             <div css={imgContainer}>
-                <img src={require('../assets/profile-pic.jpg')} alt='profile' />
+                <img src={require('../assets/profile-pic-min.jpg')} alt='profile' />
                 <img src={require('../assets/wa-logo.png')} alt='walogo' />
             </div>
             <div css={headerText}>
