@@ -1,2 +1,4 @@
 # Internship Blog
-Blog created from scratch for blogging about my progress during my internship the fall of 2020.
+> Blog about my internship at Wide Assessment 💻
+
+Created a blog from scratch to test storage and authentication using Firebase.
